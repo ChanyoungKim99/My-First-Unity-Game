@@ -23,7 +23,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        // 게임오버가 아닌 동안
+        if(!isGameover)
+        {
+            // 생존 시간 갱신
+            surviveTime += Time.deltaTime;
+            // 갱신한 생존 시간을 timeText 텍스트 컴포넌트를 이용해 표시
+            timeText.text = "Time: " + (int) surviveTime;
+        }
     }
 
     // 현재 게임을 게임오버 상태로 변경하는 메서드
